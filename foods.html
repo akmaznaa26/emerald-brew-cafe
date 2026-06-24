@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foods | Emerald Brew Café</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h3>All Pages</h3>
+
+<a href="services.html">Services</a>
+<a href="promotion.html">Promotion</a>
+<a href="foods.html">Foods</a>
+<a href="drinks.html">Drinks</a>
+<a href="desserts.html">Desserts</a>
+<a href="snack.html">Snacks</a>
+<a href="gallery.html">Gallery</a>
+<a href="review.html">Customer Review</a>
+<a href="reservation.html">Reservations</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- TOPBAR (NOW EXACT SAME) -->
+    <div class="topbar">
+        <div>Mon - Fri: 9.00am - 10.00pm</div>
+        <div>Explore Us</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+			<a href="index.html">Emerald Brew</a>
+		</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="vission-mission.html">Vission & Mission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="disclaimer.html">Disclaimer & References</a></li>
+			<li><a href="group.html">Group members</a></li>
+
+        </ul>
+
+        <a href="services.html" class="book-btn">ORDER NOW</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+
+<h1>Our Food Menu</h1>
+
+<p>
+Explore delicious Western dishes and traditional Malay cuisine.
+</p>
+
+</section>
+
+<!-- FOOD SECTION -->
+<section class="foods">
+
+<div class="food-title">
+<h2>Choose Your Favourite Cuisine</h2>
+<p>Click the category below to explore our menu.</p>
+</div>
+
+<div class="food-buttons">
+
+<button class="tab-btn" onclick="showMenu('western')">
+Western
+</button>
+
+<button class="tab-btn" onclick="showMenu('malay')">
+Malay Cuisine
+</button>
+
+</div>
+
+<!-- WESTERN -->
+<div id="western" class="menu-section">
+
+<div class="food-card">
+<img src="western/chicken pasta.jpg">
+<h3>Chicken Pasta</h3>
+<p>RM18.90</p>
+</div>
+
+<div class="food-card">
+<img src="western/chicken chop.jpg">
+<h3>Chicken Chop</h3>
+<p>RM19.90</p>
+</div>
+
+<div class="food-card">
+<img src="western/aglio olio.jpg">
+<h3>Aglio Olio Pasta</h3>
+<p>RM16.90</p>
+</div>
+
+<div class="food-card">
+<img src="western/grilled chop.jpg">
+<h3>Grilled Chicken Chop</h3>
+<p>RM15.90</p>
+</div>
+
+<div class="food-card">
+<img src="western/pasta.jpg">
+<h3>Seafood Pasta</h3>
+<p>RM17.90</p>
+</div>
+
+<div class="food-card">
+<img src="western/macaroni.jpg">
+<h3>Macaroni Cheese</h3>
+<p>RM10.90</p>
+</div>
+
+<div class="food-card">
+<img src="western/lasagna.jpg">
+<h3>Lasagna</h3>
+<p>RM9.90</p>
+</div>
+
+<div class="food-card">
+<img src="western/mushroom soup.jpg">
+<h3>Mushroom Soup</h3>
+<p>RM6.90</p>
+</div>
+
+</div>
+
+<!-- MALAY -->
+<div id="malay" class="menu-section hidden">
+
+<div class="food-card">
+<img src="malay cuisine/nasi lemak.jpg">
+<h3>Nasi Lemak</h3>
+<p>RM8.90</p>
+</div>
+
+<div class="food-card">
+<img src="malay cuisine/udang fried rice.jpg">
+<h3>Udang Fried Rice</h3>
+<p>RM9.90</p>
+</div>
+
+<div class="food-card">
+<img src="malay cuisine/ayam kunyit.jpg">
+<h3>Ayam Goreng Kunyit</h3>
+<p>RM12.90</p>
+</div>
+
+<div class="food-card">
+<img src="malay cuisine/grilled chicken.jpg">
+<h3>Grilled Chicken Rice</h3>
+<p>RM13.90</p>
+</div>
+
+<div class="food-card">
+<img src="malay cuisine/chicken penyet.jpg">
+<h3>Chicken Penyet</h3>
+<p>RM13.90</p>
+</div>
+
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Emerald Brew Café | All Rights Reserved
+</footer>
+
+</div>
+</div>
+
+<script>
+
+function showMenu(menu){
+
+document.getElementById("western")
+.classList.add("hidden");
+
+document.getElementById("malay")
+.classList.add("hidden");
+
+document.getElementById(menu)
+.classList.remove("hidden");
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Emerald Brew Café</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h3>All Pages</h3>
+
+<a href="services.html">Services</a>
+<a href="promotion.html">Promotion</a>
+<a href="foods.html">Foods</a>
+<a href="drinks.html">Drinks</a>
+<a href="desserts.html">Desserts</a>
+<a href="snack.html">Snacks</a>
+<a href="gallery.html">Gallery</a>
+<a href="review.html">Customer Review</a>
+<a href="reservation.html">Reservations</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- TOPBAR (NOW EXACT SAME) -->
+    <div class="topbar">
+        <div>Mon - Fri: 9.00am - 10.00pm</div>
+        <div>Explore Us</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+			<a href="index.html">Emerald Brew</a>
+		</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="vission-mission.html">Vission & Mission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="disclaimer.html">Disclaimer & References</a></li>
+			<li><a href="group.html">Group members</a></li>
+
+        </ul>
+
+        <a href="services.html" class="book-btn">ORDER NOW</a>
+</nav>
+
+<!-- ORDER FROM HOME -->
+
+<section class="reservation">
+
+<h2 class="section-title">Order From Home</h2>
+
+<form id="serviceForm" class="reservation-form">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="tel" placeholder="Phone Number" required>
+
+<label>Order Type</label>
+
+<select required>
+
+<option value="">Select Order Type</option>
+
+<option>Delivery</option>
+
+<option>Self Pick-Up</option>
+
+</select>
+
+<textarea placeholder="Delivery Address" required></textarea>
+
+<label>Food Order</label>
+
+<div class="order-row">
+
+<select>
+
+<option value="">Western</option>
+
+<option data-price="18.90">Chicken Pasta (RM18.90)</option>
+
+<option data-price="19.90">Chicken Chop (RM19.90)</option>
+
+<option data-price="16.90">Aglio Olio Pasta (RM16.90)</option>
+
+<option data-price="15.90">Grilled Chicken Chop (RM15.90)</option>
+
+<option data-price="17.90">Seafood Pasta (RM17.90)</option>
+
+<option data-price="10.90">Macaroni Cheese (RM10.90)</option>
+
+<option data-price="9.90">Lasagna (RM9.90)</option>
+
+<option data-price="6.90">Mushroom Soup (RM6.90)</option>
+
+</select>
+
+<input type="number" min="1" placeholder="Qty">
+
+</div>
+
+<div class="order-row">
+
+<select>
+
+<option value="">Malay Cuisine</option>
+
+<option data-price="8.90">Nasi Lemak (RM8.90)</option>
+
+<option data-price="9.90">Udang Fried Rice (RM9.90)</option>
+
+<option data-price="12.90">Ayam Goreng Kunyit (RM12.90)</option>
+
+<option data-price="13.90">Grilled Chicken Rice (RM13.90)</option>
+
+<option data-price="13.90">Chicken Penyet (RM13.90)</option>
+
+</select>
+
+<input type="number" min="1" placeholder="Qty">
+
+</div>
+
+<label>Drink Order</label>
+
+<div class="order-row">
+
+<select>
+
+<option value="">Coffee</option>
+
+<option  data-price="9.90">Capuccino (RM9.90)</option>
+
+<option data-price="11.90">Latte (RM11.90)</option>
+
+<option data-price="11.90">Almond (RM11.90)</option>
+
+<option data-price="12.90">Mocha (RM12.90)</option>
+
+<option data-price="8.90">Butterschoth (RM8.90)</option>
+
+<option data-price="13.90">Caramel Macchiati (RM13.90)</option>
+
+<option data-price="13.90">Spanish Latte (RM13.90)</option>
+
+</select>
+
+<input type="number" min="1" placeholder="Qty">
+
+</div>
+
+<div class="order-row">
+
+<select>
+
+<option value="">Non Coffee</option>
+
+<option data-price="11.90">Chocolate (RM11.90)</option>
+
+<option data-price="12.90">Matcha Latte (RM12.90)</option>
+
+<option data-price="10.90">Honey Lemon (RM10.90)</option>
+
+<option data-price="11.90">Matcha Strawberry (RM11.90)</option>
+
+<option data-price="13.90">Mango Frappe (RM13.90)</option>
+
+<option data-price="8.90">Orange Juice (RM8.90)</option>
+
+<option data-price="8.90">Green Apple Juice (RM8.90)</option>
+
+</select>
+
+<input type="number" min="1" placeholder="Qty">
+
+</div>
+
+<!-- Tea -->
+<div class="order-row">
+
+<select>
+
+<option value="">Tea</option>
+
+<option data-price="8.90">Earl Grey Tea (RM8.90)</option>
+
+<option data-price="9.90">English Breakfast Tea (RM9.90)</option>
+
+<option data-price="8.90">Lemon Tea (RM8.90)</option>
+
+</select>
+
+<input type="number" min="1" placeholder="Qty">
+
+</div>
+
+<!-- Soda -->
+<div class="order-row">
+
+<select>
+
+<option value="">Sparkling</option>
+
+<option data-price="12.90">Lemon Sparkling (RM12.90)</option>
+
+<option data-price="12.90">Passion Fruit Sparkling (RM12.90)</option>
+
+<option data-price="12.90">Watermelon Sparkling (RM12.90)</option>
+
+<input type="number" min="1" placeholder="Qty">
+
+</select>
+
+</div>
+
+<label>Desserts Order</label>
+
+<div class="order-row">
+
+<select>
+
+<option value="">Ice Cream</option>
+
+<option data-price="8.90">Vanilla Ice Cream (RM8.90)</option>
+
+<option data-price="8.90">Cherry Ice Cream (RM8.90)</option>
+
+<option data-price="8.90">Yum Ice Cream (RM8.90)</option>
+
+<option data-price="9.90">Mint Ice Cream (RM9.90)</option>
+
+<option data-price="9.90">Passion Fruit Ice Cream (RM9.90)</option>
+
+<option data-price="10.90">Mix Ice Cream (RM10.90)</option>
+
+<option data-price="9.90">Chocolate Ice Cream (RM9.90)</option>
+
+</select>
+
+<input type="number" min="1" placeholder="Qty">
+
+</div>
+
+<div class="order-row">
+
+<select>
+
+<option value="">Cake</option>
+
+<option></option>
+
+<option data-price="13.90">Chocolate Cake (RM13.90)</option>
+
+<option data-price="14.90">Blueberry Cheese Cake (RM14.90)</option>
+
+<option data-price="15.90">Biscoff Cake (RM15.90)</option>
+
+<option data-price="14.90">Matcha Cake (RM14.90)</option>
+
+<option data-price="15.90">Rainbow Cake (RM15.90)</option>
+
+<option data-price="13.90">Strawberry Cake (RM13.90)</option>
+
+<option data-price="15.90">Oreo Cake (RM15.90)</option>
+
+<option data-price="13.90">Mango Cake (RM13.90)</option>
+
+</select>
+
+<input type="number" min="1" placeholder="Qty">
+
+</div>
+
+<label>Snacks Order</label>
+
+<div class="order-row">
+
+<select>
+
+<option value="">Snacks</option>
+
+<option data-price="8.90">French Fries (RM8.90)</option>
+
+<option data-price="9.90">Chicken Nugget (RM9.90)</option>
+
+<option data-price="8.90">Cheesy Meatball (RM8.90)</option>
+
+<option data-price="7.90">Chicken Tenders (RM7.90)</option>
+
+</select>
+
+<input type="number" min="1" placeholder="Qty">
+
+</div>
+
+<label>Payment Method</label>
+
+<select required>
+
+<option value="">Select Payment Method</option>
+
+<option>Cash</option>
+
+<option>Debit/Credit Card</option>
+
+<option>Online Banking</option>
+
+<option>Touch 'n Go eWallet</option>
+
+</select>
+
+<input type="text" id="promoInput" placeholder="Promo Code (Optional)">
+
+<textarea placeholder="Additional Notes"></textarea>
+
+<button type="submit" class="reserve-btn">
+
+Submit Order
+
+</button>
+
+<div id="totalPrice">Total: RM0.00</div>
+
+<div id="discountText"></div>
+
+</form>
+
+</section>
+
+<!-- THANK YOU POPUP -->
+
+<div id="serviceBox" class="thank-you">
+
+<h2>Thank You!</h2>
+
+<p>Your order has been received successfully.</p>
+
+<p>We will prepare your order as soon as possible.</p>
+
+<button onclick="closeService()">Close</button>
+
+</div>
+
+<script>
+
+// =======================
+// FORM SUBMIT POPUP
+// =======================
+document.getElementById("serviceForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+document.getElementById("serviceBox").style.display = "block";
+
+this.reset();
+
+});
+
+function closeService(){
+document.getElementById("serviceBox").style.display = "none";
+}
+
+
+// =======================
+// PROMO DATABASE (VALID ONLY IF CLAIMED)
+// =======================
+const promotions = {
+"STUDENT10": 0.10,
+"GROUP15": 0.15,
+"BUY1FREE1": 0.20,
+"BIRTHDAY2026": 0.15
+};
+
+
+// =======================
+// CALCULATE TOTAL
+// =======================
+function calculateTotal(){
+
+let total = 0;
+
+// kira semua item
+document.querySelectorAll(".order-row").forEach(row => {
+
+let select = row.querySelector("select");
+let qty = row.querySelector("input[type='number']");
+
+if(!select || !qty) return;
+
+let price = parseFloat(select.options[select.selectedIndex].dataset.price) || 0;
+let quantity = parseInt(qty.value) || 0;
+
+total += price * quantity;
+
+});
+
+
+// =======================
+// PROMO CHECK (MUST CLAIM FIRST)
+// =======================
+let promoInput = document.getElementById("promoInput");
+let promo = promoInput ? promoInput.value.trim().toUpperCase() : "";
+
+let claimed = localStorage.getItem("claimedPromo");
+
+// hanya check bila user dah habis type (NOT WHILE TYPING)
+if(claimed && promo && promo !== claimed){
+
+// jangan block terus, just warning
+console.log("Promo not matched claimed code");
+
+}
+
+
+// =======================
+// APPLY DISCOUNT
+// =======================
+let discount = promotions[promo] || 0;
+
+let discountAmount = total * discount;
+let finalTotal = total - discountAmount;
+
+
+// =======================
+// UPDATE UI
+// =======================
+document.getElementById("totalPrice").innerText =
+"Total: RM" + finalTotal.toFixed(2);
+
+let discountText = document.getElementById("discountText");
+
+if(discountText){
+
+if(discount > 0){
+discountText.innerText =
+"Promo Applied: -" + (discount * 100) + "% (Save RM" + discountAmount.toFixed(2) + ")";
+}
+else{
+discountText.innerText = "";
+}
+
+}
+
+}
+
+
+// =======================
+// AUTO UPDATE
+// =======================
+document.addEventListener("input", calculateTotal);
+document.addEventListener("change", calculateTotal);
+
+let promoTimeout;
+
+document.getElementById("promoInput").addEventListener("input", function(){
+
+clearTimeout(promoTimeout);
+
+promoTimeout = setTimeout(() => {
+
+let claimed = localStorage.getItem("claimedPromo");
+let value = this.value.trim().toUpperCase();
+
+if(value && value !== claimed){
+alert("❌ This code was not claimed in Promotion page!");
+this.value = "";
+}
+
+}, 800);
+
+});
+
+</script>
+
+   <!-- FOOTER -->
+    <footer>
+        © 2026 Emerald Brew Café | All Rights Reserved
+    </footer>
+
+</body>
+</html>

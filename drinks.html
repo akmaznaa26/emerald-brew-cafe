@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drinks | Emerald Brew Café</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h3>All Pages</h3>
+
+<a href="services.html">Services</a>
+<a href="promotion.html">Promotion</a>
+<a href="foods.html">Foods</a>
+<a href="drinks.html">Drinks</a>
+<a href="desserts.html">Desserts</a>
+<a href="snack.html">Snacks</a>
+<a href="gallery.html">Gallery</a>
+<a href="review.html">Customer Review</a>
+<a href="reservation.html">Reservations</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- TOPBAR (NOW EXACT SAME) -->
+    <div class="topbar">
+        <div>Mon - Fri: 9.00am - 10.00pm</div>
+        <div>Explore Us</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+			<a href="index.html">Emerald Brew</a>
+		</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="vission-mission.html">Vission & Mission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="disclaimer.html">Disclaimer & References</a></li>
+			<li><a href="group.html">Group members</a></li>
+
+        </ul>
+
+        <a href="services.html" class="book-btn">ORDER NOW</a>
+</nav>
+
+<section class="page-header">
+<h1>Our Drinks Menu</h1>
+<p>Discover our coffee, tea and refreshing beverages.</p>
+</section>
+
+<section class="drinks">
+
+<div class="drink-title">
+<h2>Select Your Drink Category</h2>
+<p>Choose a category below to explore our beverages.</p>
+</div>
+
+<div class="drink-buttons">
+
+<button class="tab-btn" onclick="showDrink('coffee')">
+Coffee
+</button>
+
+<button class="tab-btn" onclick="showDrink('noncoffee')">
+Non Coffee
+</button>
+
+<button class="tab-btn" onclick="showDrink('tea')">
+Tea
+</button>
+
+<button class="tab-btn" onclick="showDrink('sparkling')">
+Sparkling
+</button>
+
+</div>
+
+<!-- COFFEE -->
+
+<div id="coffee" class="menu-section">
+
+<div class="drink-card">
+<img src="drinks/capuccino.jpg">
+<h3>Capuccino</h3>
+<p>RM9.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/latte.jpg">
+<h3>Latte</h3>
+<p>RM11.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/almond.jpg">
+<h3>Almond</h3>
+<p>RM11.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/mocha.jpg">
+<h3>Mocha</h3>
+<p>RM12.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/butterscoth.jpg">
+<h3>Butterscoth</h3>
+<p>RM8.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/caramel coffee.jpg">
+<h3>Caramel Macchiato</h3>
+<p>RM13.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/spanish latte.jpg">
+<h3>Spanish Latte</h3>
+<p>RM13.90</p>
+</div>
+
+</div>
+
+<!-- NON COFFEE -->
+
+<div id="noncoffee" class="menu-section hidden">
+
+<div class="drink-card">
+<img src="drinks/chocolate.jpg">
+<h3>Chocolate</h3>
+<p>RM11.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/matcha.jpg">
+<h3>Matcha Latte</h3>
+<p>RM12.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/honey lemon.jpg">
+<h3>Honey Lemon</h3>
+<p>RM10.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/matcha strawberry.jpg">
+<h3> Matcha Strawberry</h3>
+<p>RM11.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/mango.jpg">
+<h3>Mango Frappe</h3>
+<p>RM13.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/orange.jpg">
+<h3>Orange Juice</h3>
+<p>RM8.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/green apple.jpg">
+<h3>Green Apple Juice</h3>
+<p>RM8.90</p>
+</div>
+
+
+</div>
+
+<!-- TEA -->
+
+<div id="tea" class="menu-section hidden">
+
+<div class="drink-card">
+<img src="drinks/early grey tea.jpg">
+<h3>Earl Grey Tea</h3>
+<p>RM8.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/english breakfast tea.jpg">
+<h3>English Breakfast Tea</h3>
+<p>RM8.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/lemon tea.jpg">
+<h3>Lemon Tea</h3>
+<p>RM9.90</p>
+</div>
+
+</div>
+
+<!-- SPARKLING -->
+
+<div id="sparkling" class="menu-section hidden">
+
+<div class="drink-card">
+<img src="drinks/lemon sparkling.jpg">
+<h3>Lemon Sparkling</h3>
+<p>RM12.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/passion fruit sparkling.jpg">
+<h3>Passion Fruit Sparkling</h3>
+<p>RM12.90</p>
+</div>
+
+<div class="drink-card">
+<img src="drinks/watermelon sparkling.jpg">
+<h3>Watermelon Sparkling</h3>
+<p>RM12.90</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Emerald Brew Café | All Rights Reserved
+</footer>
+
+</div>
+</div>
+
+<script>
+
+function showDrink(type){
+
+document.getElementById("coffee").classList.add("hidden");
+document.getElementById("noncoffee").classList.add("hidden");
+document.getElementById("tea").classList.add("hidden");
+document.getElementById("sparkling").classList.add("hidden");
+
+document.getElementById(type).classList.remove("hidden");
+
+}
+
+</script>
+
+</body>
+</html>

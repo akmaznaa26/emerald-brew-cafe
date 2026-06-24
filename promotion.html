@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promotion | Emerald Brew Café</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h3>All Pages</h3>
+
+<a href="services.html">Services</a>
+<a href="promotion.html">Promotion</a>
+<a href="foods.html">Foods</a>
+<a href="drinks.html">Drinks</a>
+<a href="desserts.html">Desserts</a>
+<a href="snack.html">Snacks</a>
+<a href="gallery.html">Gallery</a>
+<a href="review.html">Customer Review</a>
+<a href="reservation.html">Reservations</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- TOPBAR (NOW EXACT SAME) -->
+    <div class="topbar">
+        <div>Mon - Fri: 9.00am - 10.00pm</div>
+        <div>Explore Us</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+			<a href="index.html">Emerald Brew</a>
+		</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="vission-mission.html">Vission & Mission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="disclaimer.html">Disclaimer & References</a></li>
+			<li><a href="group.html">Group members</a></li>
+
+        </ul>
+
+        <a href="services.html" class="book-btn">ORDER NOW</a>
+</nav>
+
+<!-- PROMOTION SECTION -->
+
+<section class="promotion-section">
+
+<div class="promotion-header">
+
+<div>
+
+<h1>Special Promotions 🎉</h1>
+
+<p>
+Enjoy exclusive discounts, birthday rewards, student deals, and exciting offers created especially for our valued customers. Every visit to Emerald Brew Café should be memorable, enjoyable, and full of delightful surprises.
+</p>
+
+</div>
+
+<div class="gif-box">
+
+<!-- GANTI promotion.gif DENGAN NAMA GIF KAU -->
+
+<img src="gif/cup.gif" alt="Promotion GIF">
+
+</div>
+
+</div>
+
+
+<div class="promotion-container">
+
+<div class="promo-card">
+
+<h2>☕ Buy 1 Free 1</h2>
+
+<p>Buy any large coffee and get another coffee for free.</p>
+
+<p><b>Every Monday & Tuesday</b></p>
+
+<p>9.00 AM - 12.00 PM</p>
+
+<button class="claim-btn"
+onclick="claimCoupon(this,'50% OFF','BUY1FREE1')">
+
+Claim Now
+
+</button>
+
+</div>
+
+<div class="promo-card">
+
+<h2>🎂 Birthday Special</h2>
+
+<p>
+Celebrate your birthday with us and enjoy a free slice of cake.
+</p>
+
+<p><b>Minimum purchase RM30</b></p>
+
+<button class="claim-btn"
+onclick="claimCoupon(this,'FREE Slice of Cake','BIRTHDAY2026')">
+
+Claim Now
+
+</button>
+
+</div>
+
+
+<div class="promo-card">
+
+<h2>👨‍🎓 Student Deal</h2>
+
+<p>
+Show your student card and get 10% off on all beverages.
+</p>
+
+<p><b>Monday - Friday</b></p>
+
+<p>2.00 PM - 5.00 PM</p>
+
+<button class="claim-btn"
+onclick="claimCoupon(this,'10% OFF','STUDENT10')">
+
+Claim Now
+
+</button>
+
+</div>
+
+
+<div class="promo-card">
+
+<h2>👥 Group Package</h2>
+
+<p>
+Come with 4 friends and enjoy 15% off your total bill.
+</p>
+
+<p><b>Perfect for study groups and gatherings.</b></p>
+
+<button class="claim-btn"
+onclick="claimCoupon(this,'15% OFF','GROUP15')">
+
+Claim Now
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 Emerald Brew Café | All Rights Reserved
+
+</footer>
+
+<script>
+
+function claimCoupon(button, discount, code){
+
+alert(
+"🎉 Coupon Claimed!\n\n" +
+"Code: " + code +
+"\nGo to Order page to use it."
+);
+
+// simpan promo yang dah claim
+localStorage.setItem("claimedPromo", code);
+
+button.innerHTML = "Claimed ✅";
+button.disabled = true;
+
+}
+
+</script>
+
+</body>
+</html>

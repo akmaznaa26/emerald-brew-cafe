@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer review | Emerald Brew Café</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h3>All Pages</h3>
+
+<a href="services.html">Services</a>
+<a href="promotion.html">Promotion</a>
+<a href="foods.html">Foods</a>
+<a href="drinks.html">Drinks</a>
+<a href="desserts.html">Desserts</a>
+<a href="snack.html">Snacks</a>
+<a href="gallery.html">Gallery</a>
+<a href="review.html">Customer Review</a>
+<a href="reservation.html">Reservations</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- TOPBAR (NOW EXACT SAME) -->
+    <div class="topbar">
+        <div>Mon - Fri: 9.00am - 10.00pm</div>
+        <div>Explore Us</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+			<a href="index.html">Emerald Brew</a>
+		</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="vission-mission.html">Vission & Mission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="disclaimer.html">Disclaimer & References</a></li>
+			<li><a href="group.html">Group members</a></li>
+
+        </ul>
+
+        <a href="services.html" class="book-btn">ORDER NOW</a>
+</nav>
+
+<!-- CUSTOMER REVIEW -->
+
+<section class="review-section">
+
+    <h2 class="section-title">Customer Review</h2>
+
+    <form id="feedbackForm" class="review-form">
+
+        <input type="text" placeholder="Your Name" required>
+
+        <label>Rate Your Experience</label>
+
+        <div class="star-rating">
+
+            <input type="radio" id="star5" name="rating">
+            <label for="star5">★</label>
+
+            <input type="radio" id="star4" name="rating">
+            <label for="star4">★</label>
+
+            <input type="radio" id="star3" name="rating">
+            <label for="star3">★</label>
+
+            <input type="radio" id="star2" name="rating">
+            <label for="star2">★</label>
+
+            <input type="radio" id="star1" name="rating">
+            <label for="star1">★</label>
+
+        </div>
+
+        <label>Upload Image or Video</label>
+
+        <input type="file" id="media" accept="image/*,video/*">
+
+        <textarea placeholder="Share your experience with us..." required></textarea>
+
+        <button type="submit" class="reserve-btn">
+
+            Submit Feedback
+
+        </button>
+
+    </form>
+
+</section>
+
+<section class="sample-reviews">
+
+    <h2 class="section-title">What Our Customers Say</h2>
+
+    <p class="review-subtitle">
+        Real feedback from our happy customers ❤️
+    </p>
+
+    <div class="review-wrapper">
+        <div id="reviewList">
+
+    <!-- MANUAL REVIEW 1 -->
+    <div class="review-card">
+        <h4>Nur Aisyah</h4>
+        <div class="stars">★★★★★</div>
+		
+        <img src="review/review1.jpeg" alt="review image">
+
+        <p>“This pasta is really delicious! The flavor is rich, the sauce is creamy and well-balanced. The portion is satisfying and definitely worth it. I would come back and order it again 👍❤️"</p>
+    </div>
+
+    <!-- MANUAL REVIEW 2 -->
+    <div class="review-card">
+        <h4>Ahmad Faris</h4>
+        <div class="stars">★★★★☆</div>
+
+        <img src="review/review2.jpg" alt="review image">
+
+        <p>“The cake decoration is so cute and beautifully done! It tastes really delicious as well. I’m so happy, and it makes the birthday feel even more special. The birthday person looked really happy too, which made the whole celebration perfect 🎂✨”</p>
+    </div>
+	
+	<!-- MANUAL REVIEW 3 -->
+    <div class="review-card">
+        <h4>Syed Ali Khan</h4>
+        <div class="stars">★★★★☆</div>
+
+        <img src="review/review3.jpg" alt="review image">
+
+        <p>“It's soooooooooooo good!!! Definitely gonna repeat it again, again, and again!❤️❤️”</p>
+    </div>
+
+    </div>
+    </div>
+
+</section>
+
+<!-- THANK YOU POPUP -->
+
+<div id="feedbackBox" class="thank-you">
+
+    <h2>Thank You!</h2>
+
+    <p>Your feedback has been submitted successfully.</p>
+
+    <p>We appreciate your support and hope to see you again at Emerald Brew Café.</p>
+
+    <button onclick="closeFeedback()">Close</button>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("feedbackForm");
+    const reviewList = document.getElementById("reviewList");
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const name = this.querySelector('input[type="text"]').value;
+        const text = this.querySelector('textarea').value;
+        const ratingChecked = this.querySelector('input[name="rating"]:checked');
+        const file = document.getElementById("media").files[0];
+
+        let stars = "No rating";
+
+        if(ratingChecked){
+            stars = "★".repeat(parseInt(ratingChecked.value));
+        }
+
+        let mediaHTML = "";
+
+        if(file){
+            let url = URL.createObjectURL(file);
+
+            if(file.type.startsWith("image")){
+                mediaHTML = `<img src="${url}" style="width:100%;max-width:250px;margin-top:10px;border-radius:10px;">`;
+            } 
+            else if(file.type.startsWith("video")){
+                mediaHTML = `<video controls style="width:100%;max-width:250px;margin-top:10px;border-radius:10px;">
+                                <source src="${url}">
+                             </video>`;
+            }
+        }
+
+        let newReview = document.createElement("div");
+        newReview.classList.add("review-card");
+
+        newReview.innerHTML = `
+            <h4>${name}</h4>
+            <div class="stars">${stars}</div>
+            <p>${text}</p>
+            ${mediaHTML}
+        `;
+
+        reviewList.appendChild(newReview);
+
+        document.getElementById("feedbackBox").style.display = "block";
+
+        this.reset();
+    });
+
+});
+
+function closeFeedback(){
+    document.getElementById("feedbackBox").style.display = "none";
+}
+</script>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Emerald Brew Café | All Rights Reserved
+    </footer>
+
+</body>
+</html>

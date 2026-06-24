@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desserts | Emerald Brew Café</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h3>All Pages</h3>
+
+<a href="services.html">Services</a>
+<a href="promotion.html">Promotion</a>
+<a href="foods.html">Foods</a>
+<a href="drinks.html">Drinks</a>
+<a href="desserts.html">Desserts</a>
+<a href="snack.html">Snacks</a>
+<a href="gallery.html">Gallery</a>
+<a href="review.html">Customer Review</a>
+<a href="reservation.html">Reservations</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- TOPBAR (NOW EXACT SAME) -->
+    <div class="topbar">
+        <div>Mon - Fri: 9.00am - 10.00pm</div>
+        <div>Explore Us</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+			<a href="index.html">Emerald Brew</a>
+		</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="vission-mission.html">Vission & Mission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="disclaimer.html">Disclaimer & References</a></li>
+
+        </ul>
+
+        <a href="services.html" class="book-btn">ORDER NOW</a>
+</nav>
+
+<!-- DESSERT SECTION -->
+
+<section class="page-header">
+
+<h1>Our Desserts Menu</h1>
+
+<p>Enjoy our delicious ice cream and cakes.</p>
+
+</section>
+
+<section class="drinks">
+
+<div class="drink-title">
+
+<h2>Select Your Dessert Category</h2>
+
+<p>Choose a category below to explore our desserts.</p>
+
+</div>
+
+<div class="drink-buttons">
+
+<button class="tab-btn" onclick="showDessert('icecream')">
+
+Ice Cream
+
+</button>
+
+<button class="tab-btn" onclick="showDessert('cake')">
+
+Cake
+
+</button>
+
+</div>
+
+<!-- ICE CREAM -->
+
+<div id="icecream" class="menu-section">
+
+<div class="drink-card">
+<img src="ice cream/vanilla ice cream.jpg">
+<h3>Vanilla Ice Cream</h3>
+<p>RM8.90</p>
+</div>
+
+<div class="drink-card">
+<img src="ice cream/cherry ice cream.jpg">
+<h3>Cherry Ice Cream</h3>
+<p>RM8.90</p>
+</div>
+
+<div class="drink-card">
+<img src="ice cream/yum ice cream.jpg">
+<h3>Yum Ice Cream</h3>
+<p>RM8.90</p>
+</div>
+
+<div class="drink-card">
+<img src="ice cream/mint chocolate.jpg">
+<h3>Mint Chocolate Ice Cream</h3>
+<p>RM9.90</p>
+</div>
+
+<div class="drink-card">
+<img src="ice cream/blueberry lemon ice cream.jpg">
+<h3>Blueberry Lemon Ice Cream</h3>
+<p>RM9.90</p>
+</div>
+
+<div class="drink-card">
+<img src="ice cream/passion fruit ice cream.jpg">
+<h3>Passion Fruit Ice Cream</h3>
+<p>RM8.90</p>
+</div>
+
+<div class="drink-card">
+<img src="ice cream/mix ice cream.jpg">
+<h3>Mix Ice Cream</h3>
+<p>RM10.90</p>
+</div>
+
+<div class="drink-card">
+<img src="ice cream/chocolate ice cream.jpg">
+<h3>Chocolate Ice Cream</h3>
+<p>RM9.90</p>
+</div>
+
+</div>
+
+<!-- CAKE -->
+
+<div id="cake" class="menu-section hidden">
+
+<div class="drink-card">
+<img src="cake/cake choclate.jpg">
+<h3>Chocolate Cake</h3>
+<p>RM13.90</p>
+</div>
+
+<div class="drink-card">
+<img src="cake/blueberry cheese.jpg">
+<h3> Blueberry Cheese Cake</h3>
+<p>RM14.90</p>
+</div>
+
+<div class="drink-card">
+<img src="cake/biscoff cake.jpg">
+<h3>Biscoff Cake</h3>
+<p>RM15.90</p>
+</div>
+
+<div class="drink-card">
+<img src="cake/matcha cake.jpg">
+<h3>Matcha Cake</h3>
+<p>RM14.90</p>
+</div>
+
+<div class="drink-card">
+<img src="cake/rainbow creep.jpg">
+<h3>Rainbow Cake</h3>
+<p>RM15.90</p>
+</div>
+
+<div class="drink-card">
+<img src="cake/strawberry cake.jpg">
+<h3>Strawberry Cake</h3>
+<p>RM13.90</p>
+</div>
+
+<div class="drink-card">
+<img src="cake/oreo cake.jpg">
+<h3>Oreo Cake</h3>
+<p>RM15.90</p>
+</div>
+
+<div class="drink-card">
+<img src="cake/mango cake.jpg">
+<h3>Mango Cake</h3>
+<p>RM13.90</p>
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+function showDessert(type){
+
+document.getElementById("icecream").classList.add("hidden");
+
+document.getElementById("cake").classList.add("hidden");
+
+document.getElementById(type).classList.remove("hidden");
+
+}
+
+</script>
+
+<footer>
+
+© 2026 Emerald Brew Café | All Rights Reserved
+
+</footer>
+
+</body>
+</html>
