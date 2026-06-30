@@ -411,6 +411,7 @@ Submit Order
 </div>
 
 <script>
+
 // =======================
 // FORM SUBMIT POPUP
 // =======================
@@ -421,27 +422,19 @@ document.getElementById("serviceForm").addEventListener("submit", function(e){
     let payment = document.getElementById("paymentMethod").value;
 
     if(payment === "Cash"){
-
         document.getElementById("serviceBox").style.display="block";
-
     }
 
     else if(payment === "Debit/Credit Card"){
-
         document.getElementById("paymentPopup").style.display="flex";
-
     }
 
     else if(payment === "Online Banking"){
-
         document.getElementById("bankPopup").style.display="flex";
-
     }
 
     else if(payment === "Touch 'n Go eWallet"){
-
         document.getElementById("tngPopup").style.display="flex";
-
     }
 
 });
@@ -469,9 +462,7 @@ function bankPay(){
     setTimeout(function(){
 
         document.getElementById("serviceBox").style.display="block";
-
         document.getElementById("serviceForm").reset();
-
         calculateTotal();
 
     },1500);
@@ -479,18 +470,18 @@ function bankPay(){
 }
 
 function closeService(){
-document.getElementById("serviceBox").style.display = "none";
+    document.getElementById("serviceBox").style.display = "none";
 }
 
 
 // =======================
-// PROMO DATABASE (VALID ONLY IF CLAIMED)
+// PROMO DATABASE
 // =======================
 const promotions = {
-"STUDENT10": 0.10,
-"GROUP15": 0.15,
-"BUY1FREE1": 0.20,
-"BIRTHDAY2026": 0.15
+    "STUDENT10": 0.10,
+    "GROUP15": 0.15,
+    "BUY1FREE1": 0.20,
+    "BIRTHDAY2026": 0.15
 };
 
 
@@ -499,101 +490,92 @@ const promotions = {
 // =======================
 function calculateTotal(){
 
-let total = 0;
+    let total = 0;
 
-// kira semua item
-document.querySelectorAll(".order-row").forEach(row => {
+    document.querySelectorAll(".order-row").forEach(row => {
 
-let select = row.querySelector("select");
-let qty = row.querySelector("input[type='number']");
+        let select = row.querySelector("select");
+        let qty = row.querySelector("input[type='number']");
 
-if(!select || !qty) return;
+        if(!select || !qty) return;
 
-let price = parseFloat(select.options[select.selectedIndex].dataset.price) || 0;
-let quantity = parseInt(qty.value) || 0;
+        let price = parseFloat(select.options[select.selectedIndex].dataset.price) || 0;
+        let quantity = parseInt(qty.value) || 0;
 
-total += price * quantity;
+        total += price * quantity;
 
-});
-
-
-// =======================
-// PROMO CHECK (MUST CLAIM FIRST)
-// =======================
-let promoInput = document.getElementById("promoInput");
-let promo = promoInput ? promoInput.value.trim().toUpperCase() : "";
-
-let claimed = localStorage.getItem("claimedPromo");
-
-// hanya check bila user dah habis type (NOT WHILE TYPING)
-if(claimed && promo && promo !== claimed){
-
-// jangan block terus, just warning
-console.log("Promo not matched claimed code");
-
-}
+    });
 
 
-// =======================
-// APPLY DISCOUNT
-// =======================
-let discount = promotions[promo] || 0;
+    // =======================
+    // PROMO APPLY
+    // =======================
+    let promoInput = document.getElementById("promoInput");
+    let promo = promoInput ? promoInput.value.trim().toUpperCase() : "";
 
-let discountAmount = total * discount;
-let finalTotal = total - discountAmount;
+    let discount = promotions[promo] || 0;
+
+    let discountAmount = total * discount;
+    let finalTotal = total - discountAmount;
 
 
-// =======================
-// UPDATE UI
-// =======================
-document.getElementById("totalPrice").innerText =
-"Total: RM" + finalTotal.toFixed(2);
+    // =======================
+    // UPDATE UI
+    // =======================
+    document.getElementById("totalPrice").innerText =
+        "Total: RM" + finalTotal.toFixed(2);
 
-let discountText = document.getElementById("discountText");
+    let discountText = document.getElementById("discountText");
 
-if(discountText){
+    if(discountText){
 
-if(discount > 0){
-discountText.innerText =
-"Promo Applied: -" + (discount * 100) + "% (Save RM" + discountAmount.toFixed(2) + ")";
-}
-else{
-discountText.innerText = "";
-}
+        if(discount > 0){
+            discountText.innerText =
+            "Promo Applied: -" + (discount * 100) + "% (Save RM" + discountAmount.toFixed(2) + ")";
+        } else {
+            discountText.innerText = "";
+        }
 
-}
+    }
 
 }
 
 
 // =======================
-// AUTO UPDATE
+// AUTO UPDATE TOTAL
 // =======================
 document.addEventListener("input", calculateTotal);
 document.addEventListener("change", calculateTotal);
 
+
+// =======================
+// PROMO INPUT (NO POPUP WHILE TYPING)
+// =======================
 let promoTimeout;
 
 document.getElementById("promoInput").addEventListener("input", function(){
 
-clearTimeout(promoTimeout);
+    clearTimeout(promoTimeout);
 
-promoTimeout = setTimeout(() => {
+    let input = this;
 
-let claimed = localStorage.getItem("claimedPromo");
-let value = this.value.trim().toUpperCase();
+    promoTimeout = setTimeout(() => {
 
-if(value && value !== claimed){
-alert("❌ This code was not claimed in Promotion page!");
-this.value = "";
-}
+        let value = input.value.trim().toUpperCase();
 
-}, 800);
+        if(!value) return;
+
+        if(!promotions[value]){
+            alert("❌ Invalid promo code!");
+            input.value = "";
+        }
+
+    }, 1200); // tunggu user stop type
 
 });
 
 </script>
-
+	
    <!-- FOOTER -->
     <footer>
         © 2026 Emerald Brew Café | All Rights Reserved
