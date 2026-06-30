@@ -640,6 +640,37 @@ footer{
     margin-top:40px;
 }
 
+.payment-popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    justify-content:center;
+    align-items:center;
+}
+
+.payment-box{
+    background:white;
+    width:400px;
+    padding:30px;
+    border-radius:10px;
+}
+
+.payment-box input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+}
+
+.payment-box button{
+    width:100%;
+    padding:12px;
+    background:#0F5E4D;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
 /* =========================
    REVIEW SECTION
 ========================= */
