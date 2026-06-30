@@ -506,18 +506,41 @@ function calculateTotal(){
 
     });
 
-
     // =======================
-    // PROMO APPLY
+    // PROMO INPUT
     // =======================
     let promoInput = document.getElementById("promoInput");
     let promo = promoInput ? promoInput.value.trim().toUpperCase() : "";
 
-    let discount = promotions[promo] || 0;
+    let discount = 0;
 
+    if(promo){
+
+        // 1. CHECK VALID CODE
+        if(!promotions.hasOwnProperty(promo)){
+            document.getElementById("discountText").innerText =
+            "❌ Invalid promo code!";
+        }
+        else{
+
+            // 2. CHECK CLAIM STATUS (STRICT)
+            let claimed = localStorage.getItem("claimed_" + promo);
+
+            if(claimed !== "true"){
+                document.getElementById("discountText").innerText =
+                "⚠️ You must claim this voucher first in Promotion page!";
+            }
+            else{
+                discount = promotions[promo];
+            }
+        }
+    }
+
+    // =======================
+    // APPLY DISCOUNT
+    // =======================
     let discountAmount = total * discount;
     let finalTotal = total - discountAmount;
-
 
     // =======================
     // UPDATE UI
@@ -528,51 +551,20 @@ function calculateTotal(){
     let discountText = document.getElementById("discountText");
 
     if(discountText){
-
         if(discount > 0){
             discountText.innerText =
             "Promo Applied: -" + (discount * 100) + "% (Save RM" + discountAmount.toFixed(2) + ")";
-        } else {
-            discountText.innerText = "";
         }
-
     }
 
 }
 
 
 // =======================
-// AUTO UPDATE TOTAL
+// AUTO UPDATE
 // =======================
 document.addEventListener("input", calculateTotal);
 document.addEventListener("change", calculateTotal);
-
-
-// =======================
-// PROMO INPUT (NO POPUP WHILE TYPING)
-// =======================
-let promoTimeout;
-
-document.getElementById("promoInput").addEventListener("input", function(){
-
-    clearTimeout(promoTimeout);
-
-    let input = this;
-
-    promoTimeout = setTimeout(() => {
-
-        let value = input.value.trim().toUpperCase();
-
-        if(!value) return;
-
-        if(!promotions[value]){
-            alert("❌ Invalid promo code!");
-            input.value = "";
-        }
-
-    }, 1200); // tunggu user stop type
-
-});
 
 </script>
 	
