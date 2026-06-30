@@ -184,20 +184,24 @@ Claim Now
 
 <script>
 
+// =======================
+// FINISH CLAIM (SAVE STATUS)
+// =======================
 function finishClaim(button, code){
 
-    alert(
-        "🎉 Coupon Claimed!\n\n" +
-        "Code: " + code +
-        "\nGo to Order page to use it."
-    );
+    // SIMPAN CLAIM STATUS (STRICT KEY)
+    localStorage.setItem("claimed_" + code, "true");
+
+    alert("🎉 Coupon Claimed!\nCode: " + code);
 
     button.innerHTML = "Claimed ✅";
     button.disabled = true;
 }
 
 
+// =======================
 // BUY 1 FREE 1
+// =======================
 function claimBuy1Free1(button,discount,code){
 
     let now = new Date();
@@ -205,9 +209,10 @@ function claimBuy1Free1(button,discount,code){
     let day = now.getDay();      
     let hour = now.getHours();
 
+    // Monday + Wednesday (00:00 - 21:00)
     if((day != 1 && day != 3) || hour < 0 || hour >= 21){
 
-        alert("This promotion is only available on Monday & Wednesday (8AM - 9PM).");
+        alert("This promotion is only available on Monday & Wednesday (12AM - 9PM).");
         return;
     }
 
@@ -215,7 +220,9 @@ function claimBuy1Free1(button,discount,code){
 }
 
 
+// =======================
 // BIRTHDAY
+// =======================
 function claimBirthday(button, discount, code){
 
     let ic = prompt("Enter your IC Number (YYMMDD-XX-XXXX)");
@@ -245,7 +252,9 @@ function claimBirthday(button, discount, code){
 }
 
 
+// =======================
 // STUDENT
+// =======================
 function claimStudent(button,discount,code){
 
     let studentID = prompt("Enter your Student Card Number");
@@ -259,7 +268,9 @@ function claimStudent(button,discount,code){
 }
 
 
+// =======================
 // GROUP PACKAGE
+// =======================
 function claimGroup(button,discount,code){
 
     let people = prompt("Number of people");
