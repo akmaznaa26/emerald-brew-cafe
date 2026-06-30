@@ -101,7 +101,7 @@ Enjoy exclusive discounts, birthday rewards, student deals, and exciting offers 
 <p>9.00 AM - 12.00 PM</p>
 
 <button class="claim-btn"
-onclick="claimCoupon(this,'50% OFF','BUY1FREE1')">
+onclick="claimBuy1Free1(this,'50% OFF','BUY1FREE1')">
 
 Claim Now
 
@@ -120,7 +120,7 @@ Celebrate your birthday with us and enjoy a free slice of cake.
 <p><b>Enjoy your birthday with a slice of cake from us!</b></p>
 
 <button class="claim-btn"
-onclick="claimCoupon(this,'FREE Slice of Cake','BIRTHDAY2026')">
+onclick="claimBirthday(this,'FREE Slice of Cake','BIRTHDAY2026')">
 
 Claim Now
 
@@ -142,7 +142,7 @@ Show your student card and get 10% off on all beverages.
 <p>2.00 PM - 5.00 PM</p>
 
 <button class="claim-btn"
-onclick="claimCoupon(this,'10% OFF','STUDENT10')">
+onclick="claimStudent(this,'10% OFF','STUDENT10')">
 
 Claim Now
 
@@ -162,7 +162,7 @@ Come with 4 friends and enjoy 15% off your total bill.
 <p><b>Perfect for study groups and gatherings.</b></p>
 
 <button class="claim-btn"
-onclick="claimCoupon(this,'15% OFF','GROUP15')">
+onclick="claimGroup(this,'15% OFF','GROUP15')">
 
 Claim Now
 
@@ -181,22 +181,102 @@ Claim Now
 
 </footer>
 
+
 <script>
 
-function claimCoupon(button, discount, code){
+function finishClaim(button, code){
 
-alert(
-"🎉 Coupon Claimed!\n\n" +
-"Code: " + code +
-"\nGo to Order page to use it."
-);
+    alert(
+        "🎉 Coupon Claimed!\n\n" +
+        "Code: " + code +
+        "\nGo to Order page to use it."
+    );
 
-// simpan promo yang dah claim
-localStorage.setItem("claimedPromo", code);
+    button.innerHTML = "Claimed ✅";
+    button.disabled = true;
+}
 
-button.innerHTML = "Claimed ✅";
-button.disabled = true;
 
+// BUY 1 FREE 1
+function claimBuy1Free1(button,discount,code){
+
+    let now = new Date();
+
+    let day = now.getDay();      
+    let hour = now.getHours();
+
+    if((day != 1 && day != 3) || hour < 0 || hour >= 21){
+
+        alert("This promotion is only available on Monday & Wednesday (8AM - 9PM).");
+        return;
+    }
+
+    finishClaim(button,code);
+}
+
+
+// BIRTHDAY
+function claimBirthday(button, discount, code){
+
+    let ic = prompt("Enter your IC Number (YYMMDD-XX-XXXX)");
+
+    if(ic == null) return;
+
+    ic = ic.replace(/-/g, "");
+
+    if(ic.length < 6){
+        alert("Invalid IC Number.");
+        return;
+    }
+
+    let birthMonth = ic.substring(2,4);
+    let birthDay = ic.substring(4,6);
+
+    let today = new Date();
+    let currentMonth = String(today.getMonth()+1).padStart(2,'0');
+    let currentDay = String(today.getDate()).padStart(2,'0');
+
+    if(birthMonth != currentMonth || birthDay != currentDay){
+        alert("This voucher can only be claimed on your birthday.");
+        return;
+    }
+
+    finishClaim(button,code);
+}
+
+
+// STUDENT
+function claimStudent(button,discount,code){
+
+    let studentID = prompt("Enter your Student Card Number");
+
+    if(studentID == null || studentID.trim() == ""){
+        alert("Student Card Number is required.");
+        return;
+    }
+
+    finishClaim(button,code);
+}
+
+
+// GROUP PACKAGE
+function claimGroup(button,discount,code){
+
+    let people = prompt("Number of people");
+
+    if(Number(people) < 4){
+        alert("Minimum 4 people required.");
+        return;
+    }
+
+    let purchase = prompt("Total purchase amount (RM)");
+
+    if(Number(purchase) < 40){
+        alert("Minimum purchase RM40 required.");
+        return;
+    }
+
+    finishClaim(button,code);
 }
 
 </script>
