@@ -311,7 +311,7 @@
 
 <label>Payment Method</label>
 
-<select required>
+<select id="paymentMethod" required>
 
 <option value="">Select Payment Method</option>
 
@@ -320,8 +320,6 @@
 <option>Debit/Credit Card</option>
 
 <option>Online Banking</option>
-
-<option>Touch 'n Go eWallet</option>
 
 </select>
 
@@ -347,30 +345,138 @@ Submit Order
 
 <div id="serviceBox" class="thank-you">
 
-<h2>Thank You!</h2>
+    <h2>Thank You!</h2>
 
-<p>Your order has been received successfully.</p>
+    <p>Your order has been received successfully.</p>
 
-<p>We will prepare your order as soon as possible.</p>
+    <p>We will prepare your order as soon as possible.</p>
 
-<button onclick="closeService()">Close</button>
+    <button onclick="closeService()">Close</button>
+
+</div>
+
+<div id="paymentPopup" class="payment-popup">
+    <div class="payment-box">
+
+        <h2>Secure Payment</h2>
+
+        <label>Card Number</label>
+        <input type="text" placeholder="1234 5678 9012 3456">
+
+        <label>Card Holder</label>
+        <input type="text" placeholder="John Doe">
+
+        <div class="row">
+            <div>
+                <label>Expiry</label>
+                <input type="text" placeholder="MM/YY">
+            </div>
+
+            <div>
+                <label>CVV</label>
+                <input type="password" placeholder="123">
+            </div>
+        </div>
+
+        <button onclick="payNow()">Pay Now</button>
+
+    </div>
+</div>
+
+<div id="bankPopup" class="payment-popup">
+
+    <div class="payment-box">
+
+        <h2>Online Banking</h2>
+
+        <select id="bankSelect">
+
+            <option>Maybank2u</option>
+            <option>CIMB Clicks</option>
+            <option>Bank Islam</option>
+            <option>RHB Now</option>
+            <option>Public Bank</option>
+			<option>BSN</option>
+
+        </select>
+
+        <input type="text" placeholder="Username">
+
+        <input type="password" placeholder="Password">
+
+        <button onclick="bankPay()">Login & Pay</button>
+
+    </div>
 
 </div>
 
 <script>
-
 // =======================
 // FORM SUBMIT POPUP
 // =======================
 document.getElementById("serviceForm").addEventListener("submit", function(e){
 
-e.preventDefault();
+    e.preventDefault();
 
-document.getElementById("serviceBox").style.display = "block";
+    let payment = document.getElementById("paymentMethod").value;
 
-this.reset();
+    if(payment === "Cash"){
+
+        document.getElementById("serviceBox").style.display="block";
+
+    }
+
+    else if(payment === "Debit/Credit Card"){
+
+        document.getElementById("paymentPopup").style.display="flex";
+
+    }
+
+    else if(payment === "Online Banking"){
+
+        document.getElementById("bankPopup").style.display="flex";
+
+    }
+
+    else if(payment === "Touch 'n Go eWallet"){
+
+        document.getElementById("tngPopup").style.display="flex";
+
+    }
 
 });
+
+function payNow(){
+
+    document.getElementById("paymentPopup").style.display="none";
+
+    alert("Processing Payment...");
+
+    setTimeout(function(){
+
+        document.getElementById("serviceBox").style.display="block";
+        document.getElementById("serviceForm").reset();
+        calculateTotal();
+
+    },2000);
+
+}
+
+function bankPay(){
+
+    document.getElementById("bankPopup").style.display="none";
+
+    setTimeout(function(){
+
+        document.getElementById("serviceBox").style.display="block";
+
+        document.getElementById("serviceForm").reset();
+
+        calculateTotal();
+
+    },1500);
+
+}
 
 function closeService(){
 document.getElementById("serviceBox").style.display = "none";
